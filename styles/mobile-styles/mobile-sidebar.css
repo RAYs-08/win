@@ -1,0 +1,35 @@
+@media (max-width: 480px) {
+  #sidebar {
+    top: 70px;
+    width: 170px;
+    opacity: 0.95;
+    
+    font-size: 0.75rem;
+  }
+
+  .first-half > a {
+    height: 40px;
+  }
+
+  .second-half {
+    font-size: 0.6rem;
+  }
+
+  .hr2 {
+    width: 150px;
+  }
+
+  .my-profile {
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+
+  .my-profile img {
+    width: 30px;
+    height: 30px;
+  }
+
+  body:has(.sidebar-hidden-checkbox:checked) {
+    margin-left: 0;
+  }
+}

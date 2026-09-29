@@ -1,0 +1,96 @@
+@media (max-width: 786px) {
+/*Start of main*/
+/*===========================*/
+  .main-grid {
+    background-color: transparent;
+    justify-content: center;
+
+    grid-template-columns: 1fr;
+    gap: 0; 
+    margin: 0;
+
+    padding: 0;
+
+    border-radius: 0;
+    box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.7),
+                inset 2px 0 5px rgba(0, 0, 0, 0.7);
+
+    outline: none;
+  }
+
+  .post-container img {
+  
+    width: 150px;
+    height: 150px;
+    border-radius: 40px;
+
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.7);
+  }
+
+  .post-container {
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+
+    background-color: transparent;
+    box-shadow: none;
+    padding: 10px;
+
+    width: 100%;
+    max-width: none;
+
+    border-radius: 0;
+    border-top: 1px solid navy;
+
+    margin: 0;
+    padding-block: 25px;
+  }
+
+  .post-info {
+    border-radius: 10px;
+  }
+
+  .description {
+    flex-grow: 1;
+  }
+
+  .register-btn {
+    transition: background-color 0.05s, 
+                color 0.05s;
+  }
+
+  .register-btn:is(:hover, :focus-visible) {
+    cursor: default;
+    background-color: white;
+    color: navy;
+  }
+
+  .register-btn:active {
+    background-color: rgba(0, 0, 128, 0.7);
+    color: white;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+
+    margin-block-start: 35px;
+    margin-block-end: 0;
+    margin-left: 0;
+    padding: 15px 40px;
+
+    background-color: hsl(from var(--primary-color) h s l);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.7);
+  }
+
+  @container grid-container (width < 780px) {
+    .main-grid {
+      border-right: none;
+    }
+  }
+/*End of main*/
+/*===========================*/
+}

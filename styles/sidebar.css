@@ -1,0 +1,76 @@
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: hsl(from var(--primary-color) h s calc(l - 35));
+  width: 220px;
+  opacity: 0.8;
+
+  position: fixed;
+  top: 111px;
+  left: 0;
+  bottom: 0;
+
+  z-index: 3;
+
+  transform: translateX(-220px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.sidebar-hidden-checkbox:checked ~ #sidebar {
+  transform: translateX(0);
+}
+
+.first-half > a {
+  display: flex;
+  align-items: center;
+
+  height: 50px;
+  text-align: middle;
+  padding-left: 20px;
+}
+
+.first-half > a:is(:hover,:focus-visible) {
+  background-color: hsl(from var(--primary-color) h s calc(l - 20));
+  border-left: 0.4rem solid navy;
+
+  cursor: pointer;  
+  outline: none;
+}
+
+.first-half > a:active {
+  background-color: hsl(from var(--primary-color) h s calc(l - 15));
+}
+
+.my-profile {
+  display: flex;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+  gap: 20px;
+}
+
+.my-profile img {
+  border-radius: 50%;
+}
+
+.hr2 {
+  margin-block: 5px;
+  margin-left: 10px;
+  width: 190px;
+
+  opacity: 0.5;
+}
+
+.second-half {
+  font-size: 0.8rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 10px;
+
+  padding: 20px;
+  margin-block-end: 10px;
+}

@@ -1,0 +1,142 @@
+section {
+  margin-block: 50px;
+
+  background-color: hsl(from var(--primary-color) h s calc(l - 5));
+  padding: 15px 15px 15px 30px;
+  border-radius: 20px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  margin-left: 20px;
+  margin-right: 0px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.post-set-container {
+  display: flex;
+  gap: 20px;
+  
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x; /* Ensures horizontal touch scrolling works smoothly */
+  pointer-events: auto;
+
+  margin-left: 20px;
+  margin-right: 20px;
+
+  padding-bottom: 20px;
+  padding-inline: 20px;
+}
+
+.post-container {
+  display: block;
+  width: 250px;
+  height: 430px;
+
+  /*
+    Breakdown of flex: 0 0 auto
+    flex: 0 0 auto is shorthand for three separate CSS properties:
+
+    flex-grow: 0 (First number)
+    Prevents cards from expanding to fill extra space if there are only a few cards on screen. They stay their exact intended width.
+
+    flex-shrink: 0 (Second number) — This is the critical one!
+    By default, Flexbox gives items flex-shrink: 1, which means "shrink these items if they don't fit inside the container."
+    Without flex-shrink: 0, Flexbox will squeeze all your cards down like an accordion to force them all on screen at once.
+    flex-shrink: 0 tells Flexbox: "Do NOT shrink these items under any circumstances." This forces them to maintain their size, extend past the right edge, and trigger the horizontal scroll.
+
+    flex-basis: auto (Third value)
+    Tells the item to take its base size from its defined width property (e.g., width: 300px).
+  */
+  flex: 0 0 auto;
+
+  scroll-snap-align: end;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.post-set-container::-webkit-scrollbar {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.post-set-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 128, 0.699);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 10px;
+}
+
+.hr1 {
+  position: relative;
+  border: 1px solid navy;
+  margin-top: -5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+
+  z-index: 1;
+}
+
+.post-info {
+  display: flex;
+  flex: 1;
+  
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 10px;
+
+  background-color: hsl(from var(--primary-color) h s calc(l));
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.fashion-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.bottom-line-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.price {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.register-btn {
+  color: navy;
+  font-weight: 500;
+
+  border: 1px solid navy;
+  border-radius: 12px;
+
+  padding: 5px 10px;
+  background-color: #ffffff;
+
+  transition: background-color 0.15s ease-in-out, 
+              color 0.15s ease-in-out;
+}
+
+.register-btn:is(:hover, :focus-visible) {
+  cursor: pointer;
+
+  background-color: navy;
+  color: white;
+  outline: none;
+}
+
+.register-btn:active {
+  background-color: rgba(0, 0, 128, 0.7);
+}

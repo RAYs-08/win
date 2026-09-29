@@ -1,0 +1,272 @@
+/*Start of Head-bar*/
+/*===========================================*/
+.head-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(from var(--primary-color) h s l);
+  padding: 5px 20px;
+  gap: 60px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  position: relative;
+  z-index: 5;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.web-logo, .cart, .notifications {
+  position: relative;
+}
+
+.floating-card {
+  position: absolute;
+  top: 45px;
+  right: -80px;
+
+  font-size: 0.8rem;
+  white-space: nowrap;
+
+  background-color: hsl(from var(--card-color) h s l);
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.562);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.15s ease-in-out;
+}
+
+.sidebar-hidden-checkbox {
+  display: none;
+}
+
+.menu, .menu:focus-visible {
+  padding: 8px;
+  border-radius: 50%;
+  padding-bottom: 5px;
+}
+
+.notifications a, .notifications a:focus-visible {
+  padding: 7px 10px;
+  border-radius: 50%;
+  padding-top: 22px;
+}
+
+.cart a, .cart a:focus-visible {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 25px;
+  padding-bottom: 2px;
+  border-radius: 50%;
+}
+
+:is(.notifications a, .cart a, .menu):is(:focus-visible) {
+  background: hsl(from var(--primary-color) h s calc(l - 10));
+  outline: none;
+}
+
+:is(.notifications a, .cart a, .menu):is(:hover) {
+  cursor: pointer;
+  background: hsl(from var(--primary-color) h s calc(l - 10));
+}
+
+:is(.notifications a, .cart a, .menu):active {
+  background: hsl(from var(--primary-color) h s calc(l - 6));
+}
+
+.notifications .floating-card {
+  top: 45px;
+  right: -18px;
+}
+
+.cart .floating-card {
+  top: 48px;
+  right: 18px;
+}
+
+.web-logo:hover .floating-card {
+  opacity: 1;
+  transition-delay: 0.6s;
+}
+
+.web-logo a:focus-visible {
+  outline: 1px solid navy;
+} 
+
+.search-img:focus-visible {
+  outline: none;
+} 
+
+.search-img:focus-visible .search-icon {
+  background-color: rgba(25, 0, 253, 0.2);
+}
+
+:is(.notifications:hover, .cart:hover) .floating-card {
+  opacity: 1;
+}
+
+.head-bar > :where(.head-section-1, .head-section-2, .head-section-3) {
+  display: flex;  
+  align-items: center;
+  gap: 10px;
+
+  margin-left: 20px;
+}
+
+.head-section-2 {
+  flex: 1;
+  max-width: 700px;
+  gap: 0;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 9px 10px;
+  outline: none;
+
+  border: 1px solid black;
+  border-radius: 15px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+
+  max-width: 700px;
+  min-width: 50px;
+  width: 0;
+
+  background-color: hsl(from var(--primary-color) h s calc(l + 20));
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.15);
+  color: black;
+}
+
+.search-icon {
+  background-color: hsl(from var(--primary-color) h s calc(l + 15));
+
+  border: 1px solid black;
+  padding: 3px 10px 2px;
+  padding-top: 13px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.search-icon img {
+  margin-top: 2px;
+}
+/*===========================================*/
+/*End of Head-bar*/
+
+
+/*Start of Nav*/
+/*===========================================*/
+.headbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  
+  background-color: hsl(from var(--primary-color) h s calc(l + 5));
+  outline: 1px solid rgb(216, 216, 216);
+
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  position: fixed;
+  top: 65px;
+  right: 0;
+  left: 0;
+
+  z-index: 4;
+
+  container-type: inline-size;
+  container-name: head-nav;
+}
+
+.headbar-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.headbar-nav * {
+  flex-shrink: 0;
+}
+
+.headbar-nav div:is(:hover, :focus-within) {   
+  background-color: hsl(from var(--primary-color) h s calc(l - 5));
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 128, 0.548);   
+}
+
+.headbar-nav a {
+  display: block;
+  color: navy;
+  padding: 13px 40px;
+}
+
+.headbar-nav a:focus {
+  outline: none;
+  border: none;   
+}
+
+.home {
+  border-right: 1rem solid navy;
+}
+
+#nav-active {
+  background-color: hsl(from var(--primary-color) h s calc(l - 20));
+  box-shadow: inset 0 -2px 0 rgb(0, 0, 128);
+  
+  color: white;
+}
+
+.headbar-nav a.home#nav-active {
+  color: white;
+}
+/*===========================================*/
+/*End of Nav*/  
+
+
+/*Start of H1*/
+/*===========================================*/
+h1 {
+  display: inline-block;
+
+  margin-block-start: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  font-variant: small-caps;
+
+  background-color: hsl(from var(--primary-color) h s calc(l - 5));
+  padding: 1px 40px;
+  width: 360px;
+
+  border-top: 1px solid navy;
+  border-bottom-right-radius: 60px;
+  box-shadow: 10px 0px 0 navy;
+
+  position: relative;
+}
+
+h1::before {
+  content: '';
+
+  position: absolute;
+  background: linear-gradient(to right, navy 0% 33%, white 33% 100%);
+  width: 360px;
+  height: 62px;
+  left: 0;
+  border-bottom-right-radius: 60px;
+
+  z-index: -1;
+}
+
+h1 span {
+  color: navy;
+}
+
+@media screen and (max-width: 761px) {
+  h1 {
+    margin-block-start: 65px;
+  }
+}
+/*===========================================*/
+/*End of H1*/  
