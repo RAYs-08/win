@@ -14,11 +14,17 @@
 
     <title>WinFashion - Home</title>
 
-    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/general.css" >
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/main-styles/index-main.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/sidebar.css">
+
+    <link rel="preload" href="styles/general.css" as="style" fetchpriority="high">
+    <link rel="preload" href="styles/header.css" as="style" fetchpriority="high">
+    <link rel="preload" href="styles/main-styles/index-main.css" as="style" fetchpriority="high">
+    <link rel="preload" href="styles/footer.css" as="style" fetchpriority="high">
+    <link rel="preload" href="styles/sidebar.css" as="style" fetchpriority="high">
 
     <link rel="stylesheet" href="styles/mobile-styles/mobile-index-main.css" media="screen and (max-width: 480px)">
     <link rel="stylesheet" href="styles/mobile-styles/mobile-headbar.css" media="screen and (max-width: 480px)">
